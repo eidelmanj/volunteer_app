@@ -1,0 +1,81 @@
+<html>
+  {% load static %}
+  {% get_static_prefix as STATIC_PREFIX %}
+
+  <head>
+    <title>Volunteer Matching Service - Log In page</title>
+    <link rel="stylesheet" type="text/css" href="{{STATIC_PREFIX}}css/main.css">
+  </head>
+
+  <body>
+
+    {% include "titlebar.html" %}
+    
+
+    <div id="intro" class="main_box">
+      <div id="log_in_existing" class="box_inner_left">
+	<h1>Log in to existing account:</h1>
+
+	<form name="login" id="loginForm" method="POST" action="../authenticate/">
+	  {% csrf_token %}
+	  <table class="login">
+
+	    <tr>
+	      <td> Username: </td>
+	      <td><input name="username" type="text"></td>
+	    </tr>
+
+	    <tr>
+	      <td>Password: </td>
+	      <td><input name="password" type="password"></td>
+	    </tr>
+	    
+	    <tr>
+	      <td> </td>
+	      <td><a href="#" onclick="document.getElementById('loginForm').submit();">Login</a></td>
+	    </tr>
+	  
+	  </table>
+	</form>
+
+      </div>
+
+      <div id="log_in_create" class="box_inner_right">
+	<h1>Create New Account:</h1>
+
+	<form name="create_account" id="create_accountForm" method="POST" action="../create_account/">
+	  {% csrf_token %}
+
+	  <table class="create_account">
+	    <tr>
+	      <td> Username: </td>
+	      <td> <input name="username" type="text"></td>
+	    </tr>
+
+	    <tr>
+	      <td> Password: </td>
+	      <td><input name="password" type="password"></td>
+	    </tr>
+
+	    <tr>
+	      <td> Repeat passowrd: </td>
+	      <td><input name="password_rep" type="password"></td>
+	    </tr>
+
+	    <tr>
+	      <td> </td>
+	      <td><a href="#" onclick="document.getElementById('create_accountForm').submit();">Create account</a></td>
+	    </tr>
+	  </table>
+
+	</form>
+
+	
+      </div>
+    </div>
+    
+  </body>
+  
+</html>
+
+  

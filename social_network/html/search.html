@@ -1,0 +1,29 @@
+<html>
+
+  {% load static %}
+  {% get_static_prefix as STATIC_PREFIX %}
+
+  <head>
+    <title>Volunteer Matching Service</title>
+    <link rel="stylesheet" type="text/css" href="{{STATIC_PREFIX}}css/main.css">
+  </head>
+
+  <body>
+    
+    
+    {% include "titlebar.html" %}
+    <script src="{{STATIC_PREFIX}}js/search.js"> </script>
+
+    <div id="job_search_div" class="main_box">
+      <h1>Welcome to the Volunteer Job Search Page!</h1>
+      
+      <!-- <table id="job_search_table" class="job_search_table"> -->
+
+      <!-- </table> -->
+      
+    </div>
+
+    {% include "bottombar.html" %}
+
+  </body>
+</html>

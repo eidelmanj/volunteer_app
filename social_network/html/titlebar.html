@@ -1,0 +1,26 @@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
+
+    <div id="title_bar" class="top_bar">
+      <ul>
+	<li><a class="white" href="/social/">Home</a></li>
+	
+	{% if user.is_authenticated %}
+	<li><a class="white" href="/social/profile/">My Profile</a></li>
+	{% else %}
+
+
+	<li><a class="white" href="/social/login/">Sign In</a></li>
+	{% endif %}
+	<li><a class="white" href="/social/job_search/">Job Search</a></li>
+	
+	<li><a class="white" href="#">Contact</a></li>
+	<li><a class="white" href="#">About</a></li>
+
+	{% if user.is_authenticated %}
+	<li><a class="white" href="/social/logout/">Log out</a></li>
+	{% endif %}
+      </ul>
+  
+    </div>
